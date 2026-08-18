@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Sr. Elegante | Renta, Venta y Sastrería</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #0b0b0b;
+      color: white;
+      line-height: 1.6;
+    }
+
+    /* ENCABEZADO */
+    header {
+      background: #000;
+      padding: 18px 20px;
+      text-align: center;
+      border-bottom: 2px solid #c9a227;
+    }
+
+    .logo {
+      font-family: Georgia, serif;
+      font-size: 38px;
+      color: #d4af37;
+      font-weight: bold;
+    }
+
+    .sublogo {
+      color: #ddd;
+      font-size: 15px;
+      letter-spacing: 3px;
+    }
+
+    /* PORTADA */
+    .hero {
+      min-height: 520px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 50px 20px;
+      background:
+        linear-gradient(rgba(0,0,0,.70), rgba(0,0,0,.85)),
+        url("trajes.jpg") center/cover no-repeat;
+    }
+
+    .hero-contenido {
+      max-width: 800px;
+    }
+
+    .hero h1 {
+      font-family: Georgia, serif;
+      font-size: 52px;
+      color: #d4af37;
+      margin-bottom: 12px;
+    }
+
+    .hero h2 {
+      font-size: 25px;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      color: #ddd;
+      font-size: 18px;
+      margin-bottom: 28px;
+    }
+
+    /* BOTONES */
+    .boton {
+      display: inline-block;
+      margin: 7px;
+      padding: 14px 24px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: .3s;
+    }
+
+    .whatsapp {
+      background: #25D366;
+      color: white;
+    }
+
+    .ubicacion {
+      background: #d4af37;
+      color: #000;
+    }
+
+    .boton:hover {
+      transform: scale(1.05);
+    }
+
+    /* SECCIONES */
+    section {
+      padding: 60px 20px;
+    }
+
+    .titulo {
+      text-align: center;
+      color: #d4af37;
+      font-family: Georgia, serif;
+      font-size: 34px;
+      margin-bottom: 35px;
+    }
+
+    /* SERVICIOS */
+    .servicios {
+      max-width: 1100px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 20px;
+    }
+
+    .tarjeta {
+      background: #171717;
+      padding: 28px 20px;
+      text-align: center;
+      border-radius: 12px;
+      border: 1px solid #333;
+    }
+
+    .tarjeta h3 {
+      color: #d4af37;
+      margin-bottom: 10px;
+    }
+
+    .tarjeta p {
+      color: #ccc;
+    }
+
+    /* PRECIOS */
+    .precios {
+      background: #111;
+    }
+
+    .lista-precios {
+      max-width: 850px;
+      margin: auto;
+    }
+
+    .precio {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 18px;
+      margin-bottom: 10px;
+      background: #191919;
+      border-left: 4px solid #d4af37;
+      border-radius: 5px;
+    }
+
+    .precio strong {
+      color: #d4af37;
+      white-space: nowrap;
+    }
+
+    /* INFORMACIÓN */
+    .informacion {
+      max-width: 850px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .informacion p {
+      margin: 12px 0;
+      font-size: 17px;
+      color: #ddd;
+    }
+
+    /* CONTACTO */
+    .contacto {
+      background: #151515;
+      text-align: center;
+    }
+
+    .telefono {
+      font-size: 25px;
+      color: #d4af37;
+      font-weight: bold;
+      margin: 15px;
+    }
+
+    /* BOTÓN FLOTANTE WHATSAPP */
+    .whatsapp-flotante {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      width: 62px;
+      height: 62px;
+      border-radius: 50%;
+      background: #25D366;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      font-size: 30px;
+      box-shadow: 0 4px 15px rgba(0,0,0,.4);
+      z-index: 1000;
+    }
+
+    /* PIE */
+    footer {
+      text-align: center;
+      background: #000;
+      color: #aaa;
+      padding: 25px 15px;
+      border-top: 1px solid #333;
+    }
+
+    footer strong {
+      color: #d4af37;
+    }
+
+    /* CELULAR */
+    @media(max-width: 600px) {
+      .hero {
+        min-height: 450px;
+      }
+
+      .hero h1 {
+        font-size: 40px;
+      }
+
+      .hero h2 {
+        font-size: 21px;
+      }
+
+      .precio {
+        flex-direction: column;
+        gap: 5px;
+      }
+
+      .logo {
+        font-size: 31px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ENCABEZADO -->
+  <header>
+    <div class="logo">SR. ELEGANTE</div>
+    <div class="sublogo">RENTA • VENTA • SASTRERÍA</div>
+  </header>
+
+
+  <!-- PORTADA -->
+  <div class="hero">
+    <div class="hero-contenido">
+
+      <h1>Sr. Elegante</h1>
+
+      <h2>Elegancia para tus mejores momentos</h2>
+
+      <p>
+        Renta de trajes, venta, confección y sastrería.
+        Tenemos opciones para bodas, XV años, graduaciones
+        y todo tipo de eventos.
+      </p>
+
+      <a class="boton whatsapp"
+         href="https://wa.me/529992092547?text=Hola%20Sr.%20Elegante,%20quiero%20información"
+         target="_blank">
+         💬 Enviar WhatsApp
+      </a>
+
+      <a class="boton ubicacion"
+         href="https://maps.app.goo.gl/jJwsFdMRM8UdW7AH6"
+         target="_blank">
+         📍 Cómo llegar
+      </a>
+
+    </div>
+  </div>
+
+
+  <!-- SERVICIOS -->
+  <section>
+
+    <h2 class="titulo">Nuestros Servicios</h2>
+
+    <div class="servicios">
+
+      <div class="tarjeta">
+        <h3>🤵 Renta de Trajes</h3>
+        <p>
+          Trajes para bodas, XV años, graduaciones
+          y eventos especiales.
+        </p>
+      </div>
+
+      <div class="tarjeta">
+        <h3>✂️ Sastrería</h3>
+        <p>
+          Composturas, reparaciones, ajustes,
+          dobladillos y modificaciones.
+        </p>
+      </div>
+
+      <div class="tarjeta">
+        <h3>🧵 Confección</h3>
+        <p>
+          Trajes confeccionados a medida
+          para un ajuste elegante y personalizado.
+        </p>
+      </div>
+
+      <div class="tarjeta">
+        <h3>👔 Venta</h3>
+        <p>
+          Opciones para complementar tu estilo
+          y lucir elegante en cualquier ocasión.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- PRECIOS -->
+  <section class="precios">
+
+    <h2 class="titulo">Renta de Trajes</h2>
+
+    <div class="lista-precios">
+
+      <div class="precio">
+        <span>
+          Traje Media Etiqueta<br>
+          Pantalón + camisa + saco + corbata o moño
+        </span>
+        <strong>$900</strong>
+      </div>
+
+      <div class="precio">
+        <span>
+          Traje Etiqueta<br>
+          Pantalón + camisa + saco + chaleco + corbata o moño
+        </span>
+        <strong>$1,050</strong>
+      </div>
+
+      <div class="precio">
+        <span>
+          Smoking Etiqueta<br>
+          Pantalón + camisa de etiqueta + moño + pañuelo +
+          mancuernillas + botones finos
+        </span>
+        <strong>$1,050</strong>
+      </div>
+
+      <div class="precio">
+        <span>
+          Traje Básico 3 piezas<br>
+          Pantalón + chaleco + camisa + corbata o moño
+        </span>
+        <strong>$800</strong>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- INFORMACIÓN DE RENTA -->
+  <section>
+
+    <h2 class="titulo">Aparta tu Traje</h2>
+
+    <div class="informacion">
+
+      <p>✅ Aparta tu traje con <strong>$200</strong>.</p>
+
+      <p>✅ La liquidación se realiza el día de la entrega.</p>
+
+      <p>✅ Contamos con diferentes tallas y modelos.</p>
+
+      <p>✅ Realizamos ajustes para que tu traje luzca correctamente.</p>
+
+      <br>
+
+      <a class="boton whatsapp"
+         href="https://wa.me/529992092547?text=Hola%20Sr.%20Elegante,%20quiero%20agendar%20una%20cita%20para%20renta%20de%20traje"
+         target="_blank">
+         📅 Agendar cita por WhatsApp
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- CONTACTO -->
+  <section class="contacto">
+
+    <h2 class="titulo">Visítanos</h2>
+
+    <div class="informacion">
+
+      <p>
+        📍 Calle 69 #205 por 24 y 26<br>
+        Colonia Miraflores
+      </p>
+
+      <p class="telefono">
+        📱 999 209 2547
+      </p>
+
+      <p>
+        🕐 Lunes a Viernes<br>
+        10:00 AM – 8:00 PM
+      </p>
+
+      <p>
+        🕐 Sábado<br>
+        10:00 AM – 5:00 PM
+      </p>
+
+      <br>
+
+      <a class="boton ubicacion"
+         href="https://maps.app.goo.gl/jJwsFdMRM8UdW7AH6"
+         target="_blank">
+         📍 Abrir ubicación en Google Maps
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- PIE DE PÁGINA -->
+  <footer>
+
+    <p>
+      <strong>Sr. Elegante</strong><br>
+      Renta • Venta • Sastrería
+    </p>
+
+    <p>
+      © 2026 Sr. Elegante
+    </p>
+
+  </footer>
+
+
+  <!-- WHATSAPP FLOTANTE -->
+  <a class="whatsapp-flotante"
+     href="https://wa.me/529992092547?text=Hola%20Sr.%20Elegante,%20quiero%20información"
+     target="_blank"
+     title="WhatsApp">
+     💬
+  </a>
+
+</body>
+                                     </html>
