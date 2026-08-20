@@ -508,7 +508,34 @@
 </section>
 <script>
 function abrirRentas() {
-  alert("Rentas funcionando");
+
+document.getElementById("app-sr-elegante").innerHTML = `
+  <div style="max-width:500px; margin:auto; padding:20px; text-align:left;">
+    <h2 style="color:#d4af37; text-align:center;">🤵 Módulo de Rentas</h2>
+
+    <label>Nombre del cliente</label>
+    <input type="text" style="width:100%; padding:12px; margin:6px 0 15px;">
+
+    <label>Teléfono</label>
+    <input type="tel" style="width:100%; padding:12px; margin:6px 0 15px;">
+
+    <label>Fecha de entrega</label>
+    <input type="date" style="width:100%; padding:12px; margin:6px 0 15px;">
+
+    <label>Fecha de devolución</label>
+    <input type="date" style="width:100%; padding:12px; margin:6px 0 15px;">
+
+    <label>Total $</label>
+    <input type="number" style="width:100%; padding:12px; margin:6px 0 15px;">
+
+    <label>Anticipo $</label>
+    <input type="number" style="width:100%; padding:12px; margin:6px 0 15px;">
+
+    <button onclick="location.reload()" style="width:100%; padding:15px; margin-top:10px;">
+      ⬅️ Regresar
+    </button>
+  </div>
+`;
 }
 </script>
   <!-- FIN APP SR. ELEGANTE -->
