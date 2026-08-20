@@ -533,16 +533,22 @@ document.getElementById("app-sr-elegante").innerHTML = `
     <input type="date" style="width:100%; padding:12px; margin:6px 0 15px;">
 
     <label>Total $</label>
-    <input type="number" style="width:100%; padding:12px; margin:6px 0 15px;">
+    <input type="number" id="totalRenta" oninput="calcularSaldoRenta()" style="width:100%; padding:12px; margin:6px 0 15px;">
 
     <label>Anticipo $</label>
-    <input type="number" style="width:100%; padding:12px; margin:6px 0 15px;">
-
+    <input type="number" id="anticipoRenta" oninput="calcularSaldoRenta()" style="width:100%; padding:12px; margin:6px 0 15px;">
+<label>Saldo restante $</label>
+<input type="number" id="saldoRenta" readonly style="width:100%; padding:12px; margin:6px 0 15px;">
     <button onclick="location.reload()" style="width:100%; padding:15px; margin-top:10px;">
       ⬅️ Regresar
     </button>
   </div>
 `;
+}
+  function calcularSaldoRenta() {
+  const total = Number(document.getElementById("totalRenta").value) || 0;
+  const anticipo = Number(document.getElementById("anticipoRenta").value) || 0;
+  document.getElementById("saldoRenta").value = total - anticipo;
 }
 </script>
   <!-- FIN APP SR. ELEGANTE -->
