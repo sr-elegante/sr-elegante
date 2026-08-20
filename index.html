@@ -321,7 +321,7 @@
         </p>
       </div>
 
-      <div class="tarjeta" onclick="abrirRentas()" style="cursor:pointer;">
+      <div class="tarjeta" onclick="abrirVenta()" style="cursor:pointer;">
   <h3>👔 Venta de Trajes</h3>
   <p>
     Elige tu traje y realiza tu apartado.<br><br>
@@ -593,6 +593,32 @@ Saldo restante: $${saldo}`;
   document.getElementById("app-sr-elegante").style.display = "none";
   document.getElementById("pagos").style.display = "block";
 }
+ function abrirVenta() {
+  document.getElementById("app-sr-elegante").innerHTML = `
+    <div style="padding:20px; text-align:center;">
+      <h2>👔 Venta de Trajes</h2>
+      <p>Elige el traje que más te guste.</p>
+
+      <div style="display:grid; grid-template-columns:repeat(2,1fr); gap:12px; margin-top:20px;">
+
+        <img src="1787260125569.png" style="width:100%; border-radius:12px;">
+        <img src="1787260496992.png" style="width:100%; border-radius:12px;">
+        <img src="1787260624955.png" style="width:100%; border-radius:12px;">
+        <img src="1787260700712.png" style="width:100%; border-radius:12px;">
+        <img src="1787260757714.png" style="width:100%; border-radius:12px;">
+        <img src="1787260958566.png" style="width:100%; border-radius:12px;">
+        <img src="1787260971226.png" style="width:100%; border-radius:12px;">
+
+      </div>
+
+      <br>
+
+      <button onclick="location.reload()" style="width:100%; padding:15px; font-size:18px;">
+        ⬅️ Regresar
+      </button>
+    </div>
+  `;
+} 
 </script>
   <!-- FIN APP SR. ELEGANTE -->
 <!-- MÓDULO DE PAGOS -->
