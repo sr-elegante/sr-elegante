@@ -516,12 +516,12 @@ document.getElementById("app-sr-elegante").innerHTML = `
 ⚠️ <strong>Importante:</strong> Para rentar un traje es necesario acudir a Sr. Elegante para prueba de talla y ajustes. El llenado de esta solicitud no confirma la disponibilidad del traje.
 </div>
     <label>Nombre del cliente</label>
-    <input type="text" style="width:100%; padding:12px; margin:6px 0 15px;">
+    <input type="text" id="nombreRenta" style="width:100%; padding:12px; margin:6px 0 15px;">
 
     <label>Teléfono</label>
-    <input type="tel" style="width:100%; padding:12px; margin:6px 0 15px;">
+    <input type="tel" id="telefonoRenta" style="width:100%; padding:12px; margin:6px 0 15px;">
 <label>Tipo de renta</label>
-<select style="width:100%; padding:12px; margin:6px 0 15px;">
+<select id="tipoRenta"
   <option value="">Seleccionar...</option>
   <option>Media etiqueta</option>
   <option>Etiqueta</option>
@@ -529,10 +529,10 @@ document.getElementById("app-sr-elegante").innerHTML = `
   <option>Traje básico 3 piezas</option>
 </select>
     <label>Fecha de entrega</label>
-    <input type="date" style="width:100%; padding:12px; margin:6px 0 15px;">
+    <input type="date" id="fechaEntregaRenta" style="width:100%; padding:12px; margin:6px 0 15px;">
 
     <label>Fecha de devolución</label>
-    <input type="date" style="width:100%; padding:12px; margin:6px 0 15px;">
+    <input type="date" id="fechaDevolucionRenta" style="width:100%; padding:12px; margin:6px 0 15px;">
 
     <label>Total $</label>
     <input type="number" id="totalRenta" oninput="calcularSaldoRenta()" style="width:100%; padding:12px; margin:6px 0 15px;">
@@ -555,9 +555,28 @@ document.getElementById("app-sr-elegante").innerHTML = `
 }
   function enviarRentaWhatsApp() {
   const telefono = "529992091547";
-  const mensaje = "Hola, quiero solicitar información para apartar una renta de traje en Sr. Elegante. El pago del anticipo sería por transferencia.";
+  const nombre = document.getElementById("nombreRenta").value;
+  const telCliente = document.getElementById("telefonoRenta").value;
+  const tipo = document.getElementById("tipoRenta").value;
+  const entrega = document.getElementById("fechaEntregaRenta").value;
+  const devolucion = document.getElementById("fechaDevolucionRenta").value;
+  const total = document.getElementById("totalRenta").value;
+  const anticipo = document.getElementById("anticipoRenta").value;
+  const saldo = document.getElementById("saldoRenta").value;
+
+  const mensaje = `Hola, quiero solicitar una renta en Sr. Elegante.
+Nombre: ${nombre}
+Teléfono: ${telCliente}
+Tipo de renta: ${tipo}
+Fecha de entrega: ${entrega}
+Fecha de devolución: ${devolucion}
+Total: $${total}
+Anticipo: $${anticipo}
+Saldo restante: $${saldo}`;
+
   window.open("https://wa.me/" + telefono + "?text=" + encodeURIComponent(mensaje), "_blank");
 }
+  </script>
   <!-- FIN APP SR. ELEGANTE -->
 </body>
                                      </html>
