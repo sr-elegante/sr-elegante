@@ -597,10 +597,35 @@ Saldo restante: $${saldo}`;
   document.getElementById("app-sr-elegante").innerHTML = `
     <div style="padding:20px; text-align:center;">
       <h2>👔 Venta de Trajes</h2>
-      <p>Elige el traje que más te guste.</p>
+      <p>Conoce nuestras promociones disponibles.</p>
 
-      <div style="display:grid; grid-template-columns:repeat(2,1fr); gap:12px; margin-top:20px;">
+      <div style="background:#1c1c1c; padding:18px; margin:15px 0; border-radius:12px; text-align:left;">
+        <h3>⭐ Promoción Tergal — $2,700</h3>
+        <p>
+          👔 Saco<br>
+          👖 Pantalón<br>
+          👕 Camisa<br>
+          📏 Medidas correspondientes de talla 16 a 42<br>
+          🎨 Colores disponibles según existencia<br><br>
+          <strong>Promoción disponible dentro de la app.</strong>
+        </p>
+      </div>
 
+      <div style="background:#1c1c1c; padding:18px; margin:15px 0; border-radius:12px; text-align:left;">
+        <h3>👑 Casimir Tropical — $3,700</h3>
+        <p>
+          ✂️ Traje confeccionado a medida<br>
+          👔 Saco<br>
+          👖 Pantalón<br>
+          🎁 Camisa de regalo<br>
+          🎁 Corbata de regalo<br><br>
+          <strong>Promoción exclusiva dentro de la app.</strong>
+        </p>
+      </div>
+
+      <h3>📸 Modelos disponibles</h3>
+
+      <div style="display:grid; grid-template-columns:repeat(2,1fr); gap:12px; margin-top:15px;">
         <img src="1787260125569.png" style="width:100%; border-radius:12px;">
         <img src="1787260496992.png" style="width:100%; border-radius:12px;">
         <img src="1787260624955.png" style="width:100%; border-radius:12px;">
@@ -608,17 +633,22 @@ Saldo restante: $${saldo}`;
         <img src="1787260757714.png" style="width:100%; border-radius:12px;">
         <img src="1787260958566.png" style="width:100%; border-radius:12px;">
         <img src="1787260971226.png" style="width:100%; border-radius:12px;">
-
       </div>
 
       <br>
+
+      <a href="https://wa.me/529992091547?text=Hola%20Sr.%20Elegante,%20quiero%20información%20para%20comprar%20un%20traje."
+         target="_blank"
+         style="display:block; padding:15px; margin-bottom:12px; background:#25D366; color:white; text-decoration:none; border-radius:10px; font-size:18px;">
+        📲 Apartar por WhatsApp
+      </a>
 
       <button onclick="location.reload()" style="width:100%; padding:15px; font-size:18px;">
         ⬅️ Regresar
       </button>
     </div>
   `;
-} 
+}
 </script>
   <!-- FIN APP SR. ELEGANTE -->
 <!-- MÓDULO DE PAGOS -->
