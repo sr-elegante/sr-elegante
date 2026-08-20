@@ -494,7 +494,7 @@
       🤵 Rentas
     </button>
 
-    <button onclick="alert('Módulo de Pagos')" 
+     <button onclick="abrirPagos()"
       style="padding:18px; font-size:18px; border-radius:10px; border:none; cursor:pointer;">
       💰 Pagos
     </button>
@@ -577,7 +577,35 @@ Saldo restante: $${saldo}`;
 
   window.open("https://wa.me/" + telefono + "?text=" + encodeURIComponent(mensaje), "_blank");
 }
-  </script>
+ function abrirPagos() {
+  document.getElementById("app-sr-elegante").style.display = "none";
+  document.getElementById("pagos").style.display = "block";
+}
+</script>
   <!-- FIN APP SR. ELEGANTE -->
+<!-- MÓDULO DE PAGOS -->
+<div id="pagos" style="display:none; padding:20px;">
+  <h2>💰 Formas de pago</h2>
+
+  <div style="background:#1c1c1c; padding:18px; margin-bottom:15px; border-radius:12px;">
+    <h3>💵 Efectivo</h3>
+    <p>Pago disponible directamente en Sr. Elegante.</p>
+  </div>
+
+  <div style="background:#1c1c1c; padding:18px; margin-bottom:15px; border-radius:12px;">
+    <h3>💳 Tarjeta</h3>
+    <p>Pago con tarjeta disponible únicamente en el negocio.</p>
+  </div>
+
+  <div style="background:#1c1c1c; padding:18px; margin-bottom:15px; border-radius:12px;">
+    <h3>🏦 Transferencia</h3>
+    <p>Solicita nuestros datos bancarios para realizar tu transferencia.</p>
+  </div>
+
+  <button onclick="location.hash='';location.reload();">
+    ⬅️ Regresar
+  </button>
+</div>
+<!-- FIN MÓDULO DE PAGOS -->
 </body>
                                      </html>
