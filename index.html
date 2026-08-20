@@ -515,13 +515,11 @@ document.getElementById("app-sr-elegante").innerHTML = `
 
     <label>Teléfono</label>
     <input type="tel" id="telefonoRenta" style="width:100%; padding:12px; margin:6px 0 15px;">
-<label>Tipo de renta</label>
-<select id="tipoRenta"
+<label>Tipo de venta</label>
+<select id="tipoRenta" onchange="ponerPrecioVenta()">
   <option value="">Seleccionar...</option>
-  <option>Media etiqueta</option>
-  <option>Etiqueta</option>
-  <option>Smoking etiqueta</option>
-  <option>Traje básico 3 piezas</option>
+  <option>Promoción Tergal - $2,700</option>
+<option>Casimir Tropical - $3,700</option>
 </select>
     <label>Fecha de entrega</label>
     <input type="date" id="fechaEntregaRenta" style="width:100%; padding:12px; margin:6px 0 15px;">
@@ -547,6 +545,20 @@ document.getElementById("app-sr-elegante").innerHTML = `
   const total = Number(document.getElementById("totalRenta").value) || 0;
   const anticipo = Number(document.getElementById("anticipoRenta").value) || 0;
   document.getElementById("saldoRenta").value = total - anticipo;
+}
+function ponerPrecioVenta() {
+  const tipo = document.getElementById("tipoRenta").value;
+  const total = document.getElementById("totalRenta");
+
+  if (tipo.includes("2,700")) {
+    total.value = 2700;
+  } else if (tipo.includes("3,700")) {
+    total.value = 3700;
+  } else {
+    total.value = "";
+  }
+
+  calcularSaldoRenta();
 }
   function enviarRentaWhatsApp() {
   const telefono = "529992091547";
